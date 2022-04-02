@@ -1,0 +1,19 @@
+.calendarRankDeptBox{
+    width: 50%;
+    color: white;
+    text-align: center;
+}
+.calendarRank{
+    width: 48%;
+    display: inline-block;
+}
+.calendarDept{
+    width: 48%;
+    display: inline-block;
+}
+
+.calendarContent{
+    width: 50%;
+    color: white;
+    text-align: center;
+}

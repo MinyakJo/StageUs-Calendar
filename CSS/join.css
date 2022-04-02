@@ -1,0 +1,54 @@
+#logoImg{
+    width: 18%;
+    margin-top: 36px;
+    margin-left: 4%;
+}
+
+#mainBox{
+    width: 90%;
+    margin-left: auto;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 540px;
+}
+
+.joinBox{
+    width: 50%;
+}
+
+.joinText{
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.joinInput{
+    width: 58%;
+    margin-top: 12px;
+    padding-left: 16px;
+    height: 28px;
+    border: solid 1px #e2e2e2;
+}
+
+.secretText{
+    visibility: hidden;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-left: 1%;
+    color: red;
+}
+
+#idCheckButton{
+    width: 20%;
+    margin-left: 5%;
+    height: 30px;
+}
+
+#joinButton{
+    width: 30%;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 20px;
+}

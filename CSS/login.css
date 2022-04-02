@@ -1,0 +1,55 @@
+#mainBox{
+    display: flex;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    flex-wrap: wrap;
+}
+
+#login{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+.loginBox{
+    width: 100%;
+}
+
+.loginText{
+    font-size: 28px;
+    margin-top: 30px;
+}
+
+.loginInput{
+    width: 96%;
+    height: 40px;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+    margin-top: 16px;
+    font-size: 18px;
+    padding-left: 12px;
+}
+
+.secretText{
+    visibility: hidden;
+    margin-top: 12px;
+    margin-left: 1%;
+    color: red;
+    font-size: 12px;
+}
+
+#loginButton{
+    width: 101%;
+    height: 41px;
+    margin-top: 28px;
+    font-size: 20px;
+}
+
+#joinLink{
+    margin-top: 36px;
+    margin-right: 3%;
+    color: #cacaca;
+}

@@ -1,0 +1,98 @@
+#topBar{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #00aaff;
+}
+#logoImg{
+    width: 256px;
+    max-height: 80px;
+}
+#userNameBox{
+    width: 20%;
+    min-width: 250px;
+}
+#userName{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+#buttonBox{
+    width: 20%;
+    min-width: 250px;
+    margin-right: 12px;
+    text-align: center;
+}
+#calendarLink{
+    color: white;
+    font-size: 20px;
+    margin-right: 12px;
+}
+#addCalendarButton{
+    font-family: "SuncheonB";
+    font-size: 20px;
+}
+
+
+
+#calendarTitle{
+    margin-top: 10%;
+}
+#calendarTitleText{
+    font-size: 36px;
+    margin-left: 20%;
+}
+
+#calendarHead{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.headButton{
+    width: 3%;
+    min-width: 20px;
+    height: fit-content;
+    border: none;
+    background-color: white;
+}
+
+
+
+#calendarBody{
+    width: 60%;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+}
+
+.calendarDetail{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00aaff;
+}
+
+.calendarRankDeptBox{
+    width: 50%;
+    color: white;
+    text-align: center;
+}
+.calendarRank{
+    width: 48%;
+    display: inline-block;
+}
+.calendarDept{
+    width: 48%;
+    display: inline-block;
+}
+
+.calendarContent{
+    width: 50%;
+    color: white;
+    text-align: center;
+}
