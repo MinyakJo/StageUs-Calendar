@@ -4,20 +4,27 @@
     height: 80px;
     justify-content: space-around;
     align-items: center;
-    background-color: #00aaff;
+    background-color: var(--main-bg-color);
 }
 #logoImg{
     width: 256px;
     max-height: 80px;
 }
 #userNameBox{
+    display: flex;
     width: 20%;
     min-width: 250px;
+    justify-content: space-around;
+    align-items: center;
 }
 #userName{
-    color: white;
-    font-size: 20px;
+    display: inline-block;
+    color: var(--main-font-color);
+    font-size: var(--topBar-font-size);
     text-align: center;
+}
+#logoutButton{
+    font-size: 20px;
 }
 #buttonBox{
     width: 20%;
@@ -25,15 +32,15 @@
     margin-right: 12px;
     text-align: center;
 }
-#calendarLink{
+#memberCalendarLink{
     display: none;
-    color: white;
-    font-size: 20px;
+    color: var(--main-font-color);
+    font-size: var(--topBar-font-size);;
     margin-right: 12px;
 }
 #addCalendarButton{
     font-family: "SuncheonB";
-    font-size: 20px;
+    font-size: var(--topBar-font-size);;
 }
 
 
@@ -56,14 +63,14 @@
     min-width: 20px;
     height: fit-content;
     border: none;
-    background-color: white;
+    background-color: var(--main-font-color);
 }
 
 
 
-#calendarBody{
+.calendarBody{
     width: 60%;
-    height: 45px;
+    height: 50px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 24px;
@@ -75,24 +82,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #00aaff;
+    background-color: var(--main-bg-color);
 }
 
-.calendarDateTimeBox{
+.calendarDate{
     width: 33%;
-    color: white;
+    color: var(--main-font-color);
 }
 .calendarDate{
     display: inline-block;
     margin-left: 8px;
 }
-.calendarTime{
-    display: inline-block;
-}
 
 .calendarContent{
     width: 33%;
-    color: white;
+    color: var(--main-font-color);
 }
 
 .calendarButtonBox{
@@ -103,6 +107,6 @@
 
 .bodyButton{
     font-family: "SuncheonB";
-    font-size: 18px;
+    font-size: var(--bodyButton-font-size);
     margin-right: 8px;
 }

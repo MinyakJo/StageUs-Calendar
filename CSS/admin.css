@@ -1,6 +1,6 @@
 .calendarRankDeptBox{
     width: 50%;
-    color: white;
+    color: var(--main-font-color);
     text-align: center;
 }
 .calendarRank{
@@ -14,6 +14,6 @@
 
 .calendarContent{
     width: 50%;
-    color: white;
+    color: var(--main-font-color);
     text-align: center;
 }

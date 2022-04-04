@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<%@ include file="isLogin.jsp"%>
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -14,13 +15,13 @@
 <body>
     <nav id="topBar">
         <div id="userNameBox">
-            <h3 id="userName">조민혁 님</h3>
+            <h1 id="userName">조민혁 님</h1>
         </div>
         <div id="logoImg">
             <img src="../IMG/logoWhite.png">
         </div>
         <div id="buttonBox">
-            <a id="calendarLink" href="admin.jsp">팀원들 일정보기</a>
+            <a id="memberCalendarLink" href="admin.jsp">팀원들 일정보기</a>
             <input id="addCalendarButton" type="button" value="일정추가" onclick="addCalendarEvent()">
         </div>
     </nav>
@@ -34,7 +35,7 @@
                 <!--Back icons created by Roundicons - Flaticon</a>-->
                 <img src="../IMG/backWhite.png">
             </button>
-            <h2 id="month">개발부</h2>
+            <h2 id="month"></h2>
             <button id="forwardButton" class="headButton" onclick="forwardButtonEvent()">
                 <!--Back icons created by Roundicons - Flaticon</a>-->
                 <img src="../IMG/forwardWhite.png">
@@ -43,10 +44,10 @@
         <div id="calendarBody" onclick="calendarBodyEvent()">
             <div class="calendarDetail">
                 <div class="calendarRankDeptBox">
-                    <div class="calendarRank">개발부</div>
-                    <div class="calendarDept">팀장</div>
+                    <div class="calendarRank"></div>
+                    <div class="calendarDept"></div>
                 </div>
-                <div class="calendarContent">조민혁</div>
+                <div class="calendarContent"></div>
             </div>
         </div>
     </main>

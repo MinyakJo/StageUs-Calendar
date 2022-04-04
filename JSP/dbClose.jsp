@@ -1,5 +1,11 @@
 <%
-    result.close();
-    query.close();
-    con.close();
+    if(result != null){
+        result.close();
+    }
+    if(query != null){
+        query.close();
+    }
+    if(con != null){
+        con.close();
+    }
 %>

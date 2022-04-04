@@ -28,40 +28,28 @@ function easyInnerHTML(index = 0, innerHTML = "", color = "", visibility = ""){
 function idCheckEvent(index){
     var idValue = document.getElementsByName("idValue")[0];
     
-   if(idValue.value.length < 6){
-    easyInnerHTML(index, "아이디를 6자 이상 입력해 주세요.", "red","visible");
-   }
-   else{
-    easyInnerHTML(index, "아이디 중복 체크를 해주세요.", "red","visible");
-    idCheck = false;
-   }
+    if(idValue.value.length < 6){
+        easyInnerHTML(index, "아이디를 6자 이상 입력해 주세요.", "red","visible");
+    }
+    else{
+        easyInnerHTML(index, "아이디 중복 체크를 해주세요.", "red","visible");
+        idCheck = false;
+    }
 }
 
-function idDuplicateCheckEvent(index){
-    var inputId = document.getElementsByName("idValue")[0];
-    var idList = [];
-    idList = "<%=userIdList%>";
-
-    for(var id of idList){
-        if(id == inputId.value){
-            easyInnerHTML(index, "아이디가 중복입니다.", "red", "visible");
-            return;
-        }
-    }
-
-    easyInnerHTML(index, "사용 가능한 아이디입니다.", "green", "visible");
-    idCheck = true;
+function moveWindowEvent(){
+    window.open("isSameId.jsp", "아이디 중복 체크", "top=20%, left= 30%, width=500, height=300status=no, menubar=no, toolbar=no, resizable=no");
 }
 
 function pwCheckEvent(index){
     var pwValue = document.getElementsByName("pwValue")[0];
     
-   if(pwValue.value.length < 6){
-    easyInnerHTML(index, "비밀번호를 6자 이상 입력해 주세요.", "red","visible");
-   }
-   else{
-    easyInnerHTML(index, "비밀번호를 입력 했습니다.", "green","visible");
-   }
+    if(pwValue.value.length < 6){
+        easyInnerHTML(index, "비밀번호를 6자 이상 입력해 주세요.", "red","visible");
+    }
+    else{
+        easyInnerHTML(index, "비밀번호를 입력 했습니다.", "green","visible");
+    }
 }
 
 function pwCheckValueEvent(index){
@@ -73,9 +61,12 @@ function pwCheckValueEvent(index){
     if(pwValue.value == pwValueCheck.value){
         easyInnerHTML(index, "비밀번호가 동일합니다.", "green", "visible");
         pwCheck = true;
+        pwValue.readOnly = true;
+        pwValueCheck.readOnly = true;
     }
     else{
         easyInnerHTML(index, "비밀번호가 틀립니다.", "red", "visible");
+        pwCheck = false;
     }
 }
 
@@ -83,9 +74,10 @@ function nameCheckEvent(index){
     var nameValue = document.getElementsByName("nameValue")[0];
     var pattern = /^[가-힣]+$/;
 
+    console.log(document.activeElement.name);
     if(!pattern.test(nameValue.value)){
         easyInnerHTML(index, "한글을 입력해 주세요.", "red", "visible");
-        nameValue.value = "";
+        nameValue.value = ""
     }
     else{
         easyInnerHTML(index, "이름을 입력 했습니다.", "green","visible");

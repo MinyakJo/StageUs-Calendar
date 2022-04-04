@@ -4,7 +4,7 @@
     height: 80px;
     justify-content: space-around;
     align-items: center;
-    background-color: #00aaff;
+    background-color: var(--main-bg-color);
 }
 #logoImg{
     width: 256px;
@@ -15,7 +15,7 @@
     min-width: 250px;
 }
 #userName{
-    color: white;
+    color: var(--main-font-color);
     font-size: 20px;
     text-align: center;
 }
@@ -26,7 +26,7 @@
     text-align: center;
 }
 #calendarLink{
-    color: white;
+    color: var(--main-font-color);
     font-size: 20px;
     margin-right: 12px;
 }
@@ -55,7 +55,7 @@
     min-width: 20px;
     height: fit-content;
     border: none;
-    background-color: white;
+    background-color: var(--main-font-color);
 }
 
 
@@ -74,12 +74,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #00aaff;
+    background-color: var(--main-bg-color);
 }
 
 .calendarRankDeptBox{
     width: 50%;
-    color: white;
+    color: var(--main-font-color);
     text-align: center;
 }
 .calendarRank{
@@ -93,6 +93,6 @@
 
 .calendarContent{
     width: 50%;
-    color: white;
+    color: var(--main-font-color);
     text-align: center;
 }

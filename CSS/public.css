@@ -1,3 +1,10 @@
+:root{
+    --main-bg-color: #4E91F0;
+    --main-font-color: white;
+    --topBar-font-size: 20px;
+    --bodyButton-font-size: 18px
+}
+
 body{
     font-family: "SuncheonB";
     margin: 0;
@@ -19,7 +26,7 @@ img{
 }
 
 a{
-    color: black;
+    color: var(--main-font-color);
     text-decoration: none;
 }
 
@@ -28,8 +35,13 @@ input::placeholder{
 }
 
 input[type=button]{
-    color: white;
-    background-color: #4E91F0;
+    color: var(--main-font-color);
+    background-color: var(--main-bg-color);
+    border: none;
+}
+input[type=submit]{
+    color: var(--main-font-color);
+    background-color: var(--main-bg-color);
     border: none;
 }
 

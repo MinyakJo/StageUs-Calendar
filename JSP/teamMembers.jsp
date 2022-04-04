@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<%@ include file="isLogin.jsp"%>
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -13,13 +14,13 @@
 <body>
     <nav id="topBar">
         <div id="userNameBox">
-            <h3 id="userName">조민혁 님</h3>
+            <h1 id="userName">조민혁 님</h1>
         </div>
         <div id="logoImg">
             <img src="../IMG/logoWhite.png">
         </div>
         <div id="buttonBox">
-            <a id="calendarLink" href="admin.jsp">팀원들 일정보기</a>
+            <a id="memberCalendarLink" href="admin.jsp">팀원들 일정보기</a>
             <input id="addCalendarButton" type="button" value="일정추가" onclick="addCalendarEvent()">
         </div>
     </nav>
