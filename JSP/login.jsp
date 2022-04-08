@@ -30,7 +30,7 @@
                     <div class="secretText">비밀번호를 입력해주세요.</div>
                 </div>
 
-                <input id="loginButton" type="submit" value="로그인" onclick="loginEvent()">
+                <input id="loginButton" type="button" value="로그인" onclick="loginEvent()">
             </div>
             <a id="joinLink" href="join.jsp">회원가입</a>
         </form>

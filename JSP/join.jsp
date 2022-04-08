@@ -1,5 +1,27 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<%@ include file="dbConnect.jsp"%>
+<%
+    String nowTime = dateFormat.format(now);
 
+    sql = "SELECT * FROM rankTable";
+    query = con.prepareStatement(sql);
+
+    result = query.executeQuery();
+
+    while(result.next()){
+        userRankList.add(result.getString("userRank"));
+    }
+
+    sql= "SELECT * FROM deptTable";
+    query = con.prepareStatement(sql);
+
+    result = query.executeQuery();
+
+    while(result.next()){
+        userDeptList.add(result.getString("userDept"));
+    }
+%>
+<%@ include file="dbClose.jsp"%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -55,9 +77,6 @@
                     <div class="joinText">직급</div>
                     <select class="joinInput" name="rankValue" onchange="selectCheckEvent(5, this.value)">
                         <option value="">직급선택</option>
-                        <option value="사원">사원</option>
-                        <option value="팀장">팀장</option>
-                        <option value="관리자">관리자</option>
                     </select>
                     <div class="secretText">직급을 선택해주세요.</div>
                 </div>
@@ -66,9 +85,6 @@
                     <div class="joinText">부서</div>
                     <select class="joinInput" name="deptValue" onchange="selectCheckEvent(6, this.value)">
                         <option value="">부서선택</option>
-                        <option value="개발부">개발부</option>
-                        <option value="교육부">교육부</option>
-                        <option value="회계부">회계부</option>
                     </select>
                     <div class="secretText">부서를 선택해주세요.</div>
                 </div>
@@ -78,5 +94,48 @@
     </main>
 
     <script src="../JS/join.js"></script>
+    <script>
+        window.onload = function(){
+            var rankList = changeJspList("<%=userRankList%>", ", ");
+            var deptList = changeJspList("<%=userDeptList%>", ", ");
+
+            makeSelectOption("rank", rankList);
+            makeSelectOption("dept", deptList);
+        }
+
+        function changeJspList(jspList, splitString){
+            var list = [];
+            jspList = jspList.substr(1, jspList.length - 2);
+            list = jspList.split(splitString);
+
+            return list;
+        }
+
+        function makeSelectOption(rankOrdept, list){
+            if(rankOrdept == "rank"){
+                var rankInput = document.getElementsByName("rankValue")[0];
+
+                for(var i = 0; i < list.length; i++){
+                    rankInput.appendChild(setSelectOption(list[i]));
+                }
+            }
+            else{
+                var deptInput = document.getElementsByName("deptValue")[0];
+
+                for(var i = 0; i < list.length; i++){
+                    deptInput.appendChild(setSelectOption(list[i]));
+                }
+            }
+        }
+
+        function setSelectOption(value){
+            var newTag = document.createElement("option");
+
+            newTag.setAttribute("value", value);
+            newTag.innerHTML = value;
+
+            return newTag;
+        }
+    </script>
 </body>
 </html>

@@ -6,6 +6,7 @@ request.setCharacterEncoding("utf-8");
     String sessionId = (String)session.getAttribute("id");
     String dateValue = request.getParameter("dateValue");
     String contentValue = request.getParameter("contentValue");
+    String originContentValue = request.getParameter("originContentValue");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +25,9 @@ request.setCharacterEncoding("utf-8");
     </div>
     <div>
         <%=sessionId%>
+    </div>
+    <div>
+        <%=originContentValue%>
     </div>
 </body>
 </html>

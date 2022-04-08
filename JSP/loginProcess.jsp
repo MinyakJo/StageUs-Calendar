@@ -34,7 +34,7 @@
 
 <%
     if(id.equals("")){
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("loginError.jsp");
     }else{
         response.sendRedirect("main.jsp");
     }

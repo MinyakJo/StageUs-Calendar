@@ -37,7 +37,7 @@
             <a id="logoutButton" href="login.jsp">로그아웃</a>
         </div>
         <div id="logoImg">
-            <img src="../IMG/logoWhite.png">
+            <a href="main.jsp"><img src="../IMG/logoWhite.png"></a>
         </div>
         <div id="buttonBox">
             <a id="memberCalendarLink" href="admin.jsp">팀원들 일정보기</a>
@@ -47,7 +47,7 @@
 
     <main id="calendarBox">
         <div id="calendarTitle">
-            <h2 id="calendarTitleText">일정</h2>
+            <h1 id="calendarTitleText">일정</h1>
         </div>
         <div class="calendarHead">
             <button id="backButton" class="headButton" onclick="buttonEvent(0, 'back')">
@@ -443,20 +443,39 @@
 
         function changeDivToInput(divTag, name){
             var newInput = setInputTag(name, "text", divTag);
+            var obj = {};
 
             newInput.setAttribute("name", name + "Value");
-            if(name == "date"){
-                // var dateValue = divTag.innerHTML.slice(0,10);
-                // var timeValue = divTag.innerHTML.slice(13,divTag.innerHTML.length);
-                newInput.setAttribute("value", divTag.innerHTML);
-            }
 
-            else{
-                newInput.setAttribute("value", divTag.innerHTML);
+            if(typeof(divTag) == typeof(obj)){
+                divTag = divTag.innerHTML;
             }
+            newInput.setAttribute("value", divTag);
             newInput.style.display = "none";
 
             return newInput;
+        }
+
+        function deleteEvent(index){
+            var calendarDate = document.getElementsByClassName("calendarDate");
+            var calendarContent = document.getElementsByClassName("calendarContent");
+
+            var contentIndex = Math.floor(index / 2);
+            var content = calendarContent[contentIndex];
+            var date = calendarDate[contentIndex];
+
+            console.log(contentIndex);
+
+            var  detail = document.getElementsByClassName("calendarDetail")[contentIndex];
+
+            var dateInput = changeDivToInput(date, "date");
+            var contentInput = changeDivToInput(content, "content");
+
+            content.appendChild(contentInput);
+            date.appendChild(dateInput);
+
+            detail.action = "deleteProcess.jsp";
+            detail.submit();
         }
     </script>
 </body>
