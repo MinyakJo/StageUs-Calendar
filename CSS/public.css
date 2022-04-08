@@ -1,8 +1,18 @@
 :root{
     --main-bg-color: #4E91F0;
     --main-font-color: white;
+    --main-scroll-width: 10px;
     --topBar-font-size: 20px;
-    --bodyButton-font-size: 18px
+    --topBar-height: 80px;
+    --bodyButton-font-size: 14px;
+    --calendarBody-height: 50px;
+    --calendarBody-grown-height: 100px;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 body{

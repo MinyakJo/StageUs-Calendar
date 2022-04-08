@@ -3,6 +3,7 @@
 <%@ page import="java.sql.DriverManager"%>
 <%@ page import="java.sql.ResultSet"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Date"%>
 <%@ page import="java.sql.Timestamp"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%
@@ -28,5 +29,6 @@
     ArrayList<String> calendarDateList = new ArrayList<String>();
     ArrayList<String> calendarContentList = new ArrayList<String>();
 
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd / HH:mm");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd / HH:mm");
+    Timestamp now = new Timestamp(System.currentTimeMillis() + (60 * 60 * 9000)); // 9시간 더하기
 %>

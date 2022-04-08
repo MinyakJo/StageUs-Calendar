@@ -5,14 +5,16 @@
     String sessionId = (String)session.getAttribute("id");
     String sessionName = (String)session.getAttribute("name");
     String sessionRank = (String)session.getAttribute("rank");
+    
+    String nowTime = dateFormat.format(now);
 
-    sql = "SELECT * FROM calendar WHERE userId=?";
+    sql = "SELECT * FROM calendar WHERE userId=? ORDER BY calendarDate DESC";
     query = con.prepareStatement(sql);
     query.setString(1, sessionId);
     result = query.executeQuery();
 
     while(result.next()){
-        calendarDateList.add(dateFormat.format(result.getTimestamp("calendarDate")));
+        calendarDateList.add(result.getString("calendarDate"));
         calendarContentList.add(result.getString("calendarContent"));
     }
 %>
@@ -39,7 +41,7 @@
         </div>
         <div id="buttonBox">
             <a id="memberCalendarLink" href="admin.jsp">팀원들 일정보기</a>
-            <input id="addCalendarButton" type="button" value="일정추가" onclick="addCalendarEvent()">
+            <a id="addCalendarButton" href="addCalendar.jsp">일정 추가</a>
         </div>
     </nav>
 
@@ -47,78 +49,171 @@
         <div id="calendarTitle">
             <h2 id="calendarTitleText">일정</h2>
         </div>
-        <div id="calendarHead">
-            <button id="backButton" class="headButton" onclick="backButtonEvent()">
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(0, 'back')">
                 <!--Back icons created by Roundicons - Flaticon</a>-->
                 <img src="../IMG/backWhite.png">
             </button>
-            <h2 class="calendarMonth">월</h2>
-            <button id="forwardButton" class="headButton" onclick="forwardButtonEvent()">
+            <h2 class="calendarMonth">01월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(0, 'forward')">
                 <!--Back icons created by Roundicons - Flaticon</a>-->
                 <img src="../IMG/forwardWhite.png">
             </button>
         </div>
-    <!--
-        <div id="calendarBody">
-                <div class="calendarDetail">
-                    <div class="calendarDate"></div>
-                    <div class="calendarContent"></div>
-                    <div class="calendarButtonBox">
-                        <input class="bodyButton" type="button" value="수정" onclick="modifyEvent()">
-                        <input class="bodyButton" type="button" value="삭제" onclick="deleteEvent()">
-                    </div>
-                </div> 
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(1, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">02월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(1, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
         </div>
-    -->
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(2, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">03월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(2, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(3, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">04월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(3, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(4, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">05월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(4, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(5, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">06월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(5, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(6, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">07월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(6, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(7, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">08월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(7, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(8, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">09월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(8, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(9, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">10월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(9, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(10, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">11월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(10, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+        <div class="calendarHead">
+            <button id="backButton" class="headButton" onclick="buttonEvent(11, 'back')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/backWhite.png">
+            </button>
+            <h2 class="calendarMonth">12월</h2>
+            <button id="forwardButton" class="headButton" onclick="buttonEvent(11, 'forward')">
+                <!--Back icons created by Roundicons - Flaticon</a>-->
+                <img src="../IMG/forwardWhite.png">
+            </button>
+        </div>
+
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+        <div class="calendarBodyBox"></div>
+
+
     </main>
     <script>
         window.onload = function(){
             var userName = document.getElementById("userName");
-            var calendarMonth = document.getElementsByClassName("calendarMonth");
-            var calendarBox = document.getElementById("calendarBox");
 
             var userRank = "<%=sessionRank%>";
-            var date = "<%=calendarDateList%>";
-            var content = "<%=calendarContentList%>";
+            var nowTime = "<%=nowTime%>";
 
-            var monthList = changeJspList(date, ".");
-            var dateList = changeJspList(date, ", ");
-            var contentList = changeJspList(content, ", ");
+            var monthNow = getMonthOrDay(nowTime, "month");
 
             if(userRank == "관리자"){
-                document.getElementById("memberCalendarLink").style.display = "block";
+                document.getElementById("memberCalendarLink").style.display = "inline-block";
             }
 
             userName.innerHTML = "<%=sessionName%> 님";
 
-            calendarMonth[0].innerHTML = monthList[1] + "월";
-
-            for(var i = 0; i < contentList.length; i++){
-                var newBody = setDivTag("calendarBody");
-                var newDetailDiv = setDivTag("calendarDetail");
-                var newDateDiv = setDivTag("calendarDate");
-                var newContentDiv = setDivTag("calendarContent");
-                var newButtonBoxDiv = setDivTag("calendarButtonBox");
-                var newModifyInput = setInputTag("bodyButton", "button", "수정", "modifyEvent("+i.toString()+")");
-                var newDeleteInput = setInputTag("bodyButton", "button", "삭제", "deleteEvent("+i.toString()+")");
-
-                calendarBox.appendChild(newBody);
-
-                newBody.appendChild(newDetailDiv);
-
-                newDetailDiv.appendChild(newDateDiv);
-                newDetailDiv.appendChild(newContentDiv);
-                newDetailDiv.appendChild(newButtonBoxDiv);
-
-                console.log(dateList[i]);
-                newDateDiv.innerHTML = dateList[i];
-                
-                console.log(contentList[i]);
-                newContentDiv.innerHTML = contentList[i];
-
-                newButtonBoxDiv.appendChild(newModifyInput);
-                newButtonBoxDiv.appendChild(newDeleteInput);
-            }
+            viewMonth(monthNow);
+            newCalendarBox();
         }
 
         function changeJspList(jspList, splitString){
@@ -129,6 +224,106 @@
             return list;
         }
 
+        function getMonthOrDay(dateList, monthOrDay){
+            var date;
+
+            if(typeof(dateList) == typeof([])){
+                for(var i = 0; i < dateList.length; i++){
+                    date = dateList[i].split("-");
+                }
+            }
+            else{
+                date = dateList.split("-");
+            }
+            if(monthOrDay == "month"){
+                return date[1];
+            }
+            else{
+                return date[2].substr(0,2);
+            }
+        }
+
+        function viewMonth(monthNow){
+            var calendarHead = document.getElementsByClassName("calendarHead");
+            var calendarMonth = document.getElementsByClassName("calendarMonth");
+            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox");
+
+            for(var i = 0; i < calendarMonth.length; i++){
+                if(monthNow == calendarMonth[i].innerHTML.substr(0, 2)){
+                    calendarHead[i].style.visibility = "visible";
+                    calendarHead[i].style.opacity = "1";
+                    calendarBodyBox[i].style.visibility = "visible";
+                    calendarBodyBox[i].style.opacity = "1";
+                }
+            }
+        }
+
+        function newCalendarBox(){
+            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox");
+            var calendarMonth = document.getElementsByClassName("calendarMonth");
+
+            var content = "<%=calendarContentList%>";
+            var date = "<%=calendarDateList%>";
+
+            var contentList = changeJspList(content, ", ");
+            var dateList = changeJspList(date, ", ");
+
+            for(var i = 0; i < 12; i++){
+                var viewContentList = [];
+                var viewDateList = [];
+
+                for(var j = 0; j < dateList.length; j++){
+                    var monthNow = getMonthOrDay(dateList[j], "month");
+
+                    if(calendarMonth[i].innerHTML.substr(0, 2) == monthNow){
+                        viewContentList.push(contentList[j]);
+                        viewDateList.push(dateList[j]);
+                    }
+                }
+                newContent(viewContentList, viewDateList, i);
+            }
+            setTagEvent(dateList);
+        }
+
+        function newContent(contentList, dateList, index){
+            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox")[index];
+
+            for(var i = 0; i < contentList.length; i++){
+                var newBody = setDivTag("calendarBody");
+                var newDetailDiv = setFormTag("calendarDetail", "editProcess.jsp");
+                var newDateDiv = setDivTag("calendarDate");
+                var newContentDiv = setDivTag("calendarContent");
+                var newButtonBoxDiv = setDivTag("calendarButtonBox");
+                var newModifyButon = setInputTag("bodyButton", "button", "수정");
+                var newDeleteButton = setInputTag("bodyButton", "button", "삭제");
+
+                calendarBodyBox.appendChild(newBody);
+
+                newBody.appendChild(newDetailDiv);
+
+                newDetailDiv.appendChild(newDateDiv);
+                newDetailDiv.appendChild(newContentDiv);
+                newDetailDiv.appendChild(newButtonBoxDiv);
+
+                newDateDiv.innerHTML = dateList[i];
+                
+                newContentDiv.innerHTML = contentList[i];
+
+                newButtonBoxDiv.appendChild(newModifyButon);
+                newButtonBoxDiv.appendChild(newDeleteButton);
+            }
+        }
+
+        function setFormTag(className, action){
+            var newTag = document.createElement("form");
+
+            newTag.setAttribute("class", className);
+            newTag.setAttribute("action", action);
+            newTag.setAttribute("method", "post");
+
+            return newTag;
+        }
+
         function setDivTag(className){
             var newTag = document.createElement("div");
 
@@ -137,15 +332,131 @@
             return newTag;
         }
 
-        function setInputTag(className, type, value, onclick){
-            var newTag = document.createElement("div");
+        function setInputTag(className, type, value){
+            var newTag = document.createElement("input");
 
             newTag.setAttribute("class", className);
             newTag.setAttribute("type", type);
             newTag.setAttribute("value", value);
-            newTag.setAttribute("onclick", onclick);
 
             return newTag;
+        }
+
+        function setTagEvent(list){
+            var calendarContent = document.getElementsByClassName("calendarContent");
+            var bodyButton = document.getElementsByClassName("bodyButton");
+
+            for(var i = 0; i < list.length; i++){
+                calendarContent[i].setAttribute("onclick", "viewMore(" + i.toString() + ")");
+            }
+
+            for(var i = 0; i < list.length * 2; i++){
+                if(i % 2 == 0){
+                    bodyButton[i].setAttribute("onclick", "modifyEvent(" + i.toString() + ")");
+                }
+                else{
+                    bodyButton[i].setAttribute("onclick", "deleteEvent(" + i.toString() + ")");
+                }
+            }
+        }
+
+        function viewMore(index){
+            calendarBody = document.getElementsByClassName("calendarBody")[index];
+            calendarContent = document.getElementsByClassName("calendarContent")[index];
+
+            if(calendarBody.style.height != "var(--calendarBody-grown-height)"){
+                calendarBody.style.height = "var(--calendarBody-grown-height)";
+                calendarContent.style.whiteSpace = "pre-line";
+                calendarContent.style.paddingTop = "25px";
+                calendarContent.style.paddingBottom = "25px";
+            }
+            else{
+                calendarBody.style.height = "var(--calendarBody-height)";
+                calendarContent.style.whiteSpace = "nowrap";
+                calendarContent.style.paddingTop = "15px";
+                calendarContent.style.paddingBottom = "15px";
+            }
+        }
+
+        function buttonEvent(index, direction){
+            var calendarHead = document.getElementsByClassName("calendarHead");
+            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox");
+            
+            calendarHead[index].style.visibility = "hidden";
+            calendarHead[index].style.opacity = "0";
+            calendarBodyBox[index].style.visibility = "hidden";
+            calendarBodyBox[index].style.opacity = "0";
+
+            if(direction == "back"){
+                if(index == 0){
+                    index = 11;
+                }
+                else{
+                    index--;
+                }
+            }
+            else{
+                if(index == 11){
+                    index = 0;
+                }
+                else{
+                    index++;
+                }
+            }
+            calendarHead[index].style.visibility = "visible";
+            calendarHead[index].style.opacity = "1";
+            calendarBodyBox[index].style.visibility = "visible";
+            calendarBodyBox[index].style.opacity = "1";
+        }
+
+        function modifyEvent(index){
+            var calendarDate = document.getElementsByClassName("calendarDate");
+            var calendarContent = document.getElementsByClassName("calendarContent");
+            
+            var contentIndex = index / 2;
+            var content = calendarContent[contentIndex];
+            var date = calendarDate[contentIndex];
+            var contentValue = content.innerHTML;
+
+            if(contentValue.substr(1,5) == "input"){
+                var modifyText = document.getElementsByClassName("modifyText")[0].value;
+                
+                content.removeChild(content.firstChild);
+                content.innerHTML = modifyText;
+                viewMore(contentIndex);
+
+                var dateInput = changeDivToInput(date, "date");
+                var contentInput = changeDivToInput(content, "content");
+
+                content.appendChild(contentInput);
+                date.appendChild(dateInput);
+                
+                document.getElementsByClassName("calendarDetail")[contentIndex].submit();
+            }
+            else{
+                content.innerHTML = "";
+                var newText = setInputTag("modifyText", "text", contentValue);
+
+                content.appendChild(newText);
+            }
+        }
+
+        function changeDivToInput(divTag, name){
+            var newInput = setInputTag(name, "text", divTag);
+
+            newInput.setAttribute("name", name + "Value");
+            if(name == "date"){
+                // var dateValue = divTag.innerHTML.slice(0,10);
+                // var timeValue = divTag.innerHTML.slice(13,divTag.innerHTML.length);
+                newInput.setAttribute("value", divTag.innerHTML);
+            }
+
+            else{
+                newInput.setAttribute("value", divTag.innerHTML);
+            }
+            newInput.style.display = "none";
+
+            return newInput;
         }
     </script>
 </body>
