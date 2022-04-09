@@ -28,6 +28,7 @@
     ArrayList<String> userDeptList = new ArrayList<String>();
     ArrayList<String> calendarDateList = new ArrayList<String>();
     ArrayList<String> calendarContentList = new ArrayList<String>();
+    ArrayList<String> deptList = new ArrayList<String>();
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd / HH:mm");
     Timestamp now = new Timestamp(System.currentTimeMillis() + (60 * 60 * 9000)); // 9시간 더하기

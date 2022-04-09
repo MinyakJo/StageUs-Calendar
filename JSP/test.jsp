@@ -4,9 +4,9 @@
 <%
 request.setCharacterEncoding("utf-8");
     String sessionId = (String)session.getAttribute("id");
-    String dateValue = request.getParameter("dateValue");
+    String dateValue = request.getParameter("deptValue");
     String contentValue = request.getParameter("contentValue");
-    String originContentValue = request.getParameter("originContentValue");
+    String originContentValue = request.getParameter("rankValue");
 %>
 <!DOCTYPE html>
 <html lang="en">

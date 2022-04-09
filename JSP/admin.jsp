@@ -15,14 +15,17 @@
     result = query.executeQuery();
 
     while(result.next()){
-        userDeptList.add(result.getString("userDept"));
+        deptList.add(result.getString("userDept"));
     }
 
-    sql = "SELECT * FROM rankTable";
+    sql = "SELECT * FROM user";
     query = con.prepareStatement(sql);
     result = query.executeQuery();
 
     while(result.next()){
+        userIdList.add(result.getString("userId"));
+        userNameList.add(result.getString("userName"));
+        userDeptList.add(result.getString("userDept"));
         userRankList.add(result.getString("userRank"));
     }
 %>
@@ -55,10 +58,10 @@
 
     <main id="calendarBox">
         <div id="calendarTitle">
-            <h1 id="calendarTitleText">일정</h1>
+            <h1 id="calendarTitleText">부서</h1>
         </div>
         <div id=calendarHeadBox></div>
-        <div class="calendarBodyBox"></div>
+        <div id="calendarBodyBox"></div>
     </main>
         
     <script>
@@ -67,8 +70,11 @@
 
             var userRank = "<%=sessionRank%>";
 
-            var rankList = changeJspList("<%=userRankList%>");
-            var deptList = changeJspList("<%=userDeptList%>");
+            var deptList = changeJspList("<%=deptList%>");
+            var userIdList = changeJspList("<%=userIdList%>");
+            var userNameList = changeJspList("<%=userNameList%>");
+            var userDeptList = changeJspList("<%=userDeptList%>");
+            var userRankList = changeJspList("<%=userRankList%>");
 
             if(userRank == "관리자"){
                 document.getElementById("memberCalendarLink").style.display = "inline-block";
@@ -76,7 +82,8 @@
 
             userName.innerHTML = "<%=sessionName%> 님";
 
-            newCalendarHeadBox(deptList);
+            newCalendarHead(deptList);
+            newCalendarBody(deptList, userIdList, userNameList, userDeptList, userRankList);
             viewDept(deptList);
         }
 
@@ -88,22 +95,17 @@
             return list;
         }
 
-        function viewDept(deptList){
+        function viewDept(){
             var calendarHead = document.getElementsByClassName("calendarHead");
-            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox");
-            var dept = document.getElementsByClassName("department");
+            var calendarBody = document.getElementsByClassName("calendarBody");
 
-            for(var i = 0; i < deptList.length; i++){
-                if(dept[i].innerHTML == deptList[i]){
-                    calendarHead[i].style.visibility = "visible";
-                    calendarHead[i].style.opacity = "1";
-                    // calendarBodyBox[i].style.visibility = "visible";
-                    // calendarBodyBox[i].style.opacity = "1";
-                }
-            }
+            calendarHead[0].style.visibility = "visible";
+            calendarHead[0].style.opacity = "1";
+            calendarBody[0].style.visibility = "visible";
+            calendarBody[0].style.opacity = "1";
         }
 
-        function newCalendarHeadBox(deptList){
+        function newCalendarHead(deptList){
             var calendarHeadBox = document.getElementById("calendarHeadBox");
 
             for(var i = 0; i < deptList.length; i++){
@@ -156,25 +158,45 @@
             return newTag;
         }
 
-        function buttonEvent(index, direction, length){
+        function setFormTag(className, action, index){
+            var newTag = document.createElement("form");
+
+            newTag.setAttribute("class", className);
+            newTag.setAttribute("action", action);
+            newTag.setAttribute("method", "post");
+
+            return newTag;
+        }
+
+        function setInputTag(className, type, value){
+            var newTag = document.createElement("input");
+
+            newTag.setAttribute("class", className);
+            newTag.setAttribute("type", type);
+            newTag.setAttribute("value", value);
+
+            return newTag;
+        }
+
+        function buttonEvent(index, direction){
             var calendarHead = document.getElementsByClassName("calendarHead");
-            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox");
+            var calendarBody = document.getElementsByClassName("calendarBody");
             
             calendarHead[index].style.visibility = "hidden";
             calendarHead[index].style.opacity = "0";
-            // calendarBodyBox[index].style.visibility = "hidden";
-            // calendarBodyBox[index].style.opacity = "0";
+            calendarBody[index].style.visibility = "hidden";
+            calendarBody[index].style.opacity = "0";
 
             if(direction == "back"){
                 if(index == 0){
-                    index = 11;
+                    index = calendarHead.length - 1;
                 }
                 else{
                     index--;
                 }
             }
             else{
-                if(index == 11){
+                if(index == calendarHead.length - 1){
                     index = 0;
                 }
                 else{
@@ -183,26 +205,94 @@
             }
             calendarHead[index].style.visibility = "visible";
             calendarHead[index].style.opacity = "1";
-            // calendarBodyBox[index].style.visibility = "visible";
-            // calendarBodyBox[index].style.opacity = "1";
+            calendarBody[index].style.visibility = "visible";
+            calendarBody[index].style.opacity = "1";
+        }
+
+        function newCalendarBody(deptList, userIdList, userNameList, userDeptList, userRankList){
+            for(var i = 0; i < deptList.length; i++){
+                var viewUserIdList = [];
+                var viewUserNameList = [];
+                var viewUserRankList = [];
+
+                for(var j = 0; j < userDeptList.length; j++){
+                    if(userDeptList[j] == deptList[i]){
+                        viewUserIdList.push(userIdList[j]);
+                        viewUserNameList.push(userNameList[j]);
+                        viewUserRankList.push(userRankList[j]);
+                    }
+                }
+                newContent(viewUserIdList, viewUserNameList, viewUserRankList, deptList[i], i);
+            }
+            setTagEvent(userIdList);
+        }
+
+        function newContent(userIdList, userNameList, userRankList, dept, index){
+            var calendarBodyBox = document.getElementById("calendarBodyBox");
+
+            var newCalendarBody = setDivTag("calendarBody");
+            calendarBodyBox.appendChild(newCalendarBody);
+
+            for(var i = 0; i < userIdList.length; i++){
+                var newCalendar = setDivTag("calendar");
+                var newDetailDiv = setFormTag("calendarDetail", "teamMembers.jsp");
+                var newRankDeptBoxDiv = setDivTag("calendarRankDeptBox");
+                var newRank = setDivTag("calendarRank");
+                var newDept = setDivTag("calendarDept");
+                var newContentDiv = setDivTag("calendarContent");
+
+                newCalendarBody.appendChild(newCalendar);
+
+                newCalendar.appendChild(newDetailDiv);
+
+                newDetailDiv.appendChild(newRankDeptBoxDiv);
+                newRankDeptBoxDiv.appendChild(newRank);
+                newRankDeptBoxDiv.appendChild(newDept);
+                newRank.innerHTML = userRankList[i];
+                newDept.innerHTML = dept;
+
+                newDetailDiv.appendChild(newContentDiv);
+                newContentDiv.innerHTML = userNameList[i];
+            }
         }
 
         function setTagEvent(list){
-            var calendarContent = document.getElementsByClassName("calendarContent");
-            var bodyButton = document.getElementsByClassName("bodyButton");
+            var calendarDetail = document.getElementsByClassName("calendarDetail");
 
             for(var i = 0; i < list.length; i++){
-                calendarContent[i].setAttribute("onclick", "viewMore(" + i.toString() + ")");
+                calendarDetail[i].setAttribute("onclick", "viewMore(" + i.toString() + ")");
             }
+        }
 
-            for(var i = 0; i < list.length * 2; i++){
-                if(i % 2 == 0){
-                    bodyButton[i].setAttribute("onclick", "modifyEvent(" + i.toString() + ")");
-                }
-                else{
-                    bodyButton[i].setAttribute("onclick", "deleteEvent(" + i.toString() + ")");
-                }
+        function viewMore(index){
+            calendarContent = document.getElementsByClassName("calendarContent")[index];
+            calendarRank = document.getElementsByClassName("calendarRank")[index];
+            calendarDept = document.getElementsByClassName("calendarDept")[index];
+
+            var contentInput = changeDivToInput(calendarContent, "content");
+            var rankInput = changeDivToInput(calendarRank, "rank");
+            var deptInput = changeDivToInput(calendarDept, "dept");
+
+            calendarContent.appendChild(contentInput);
+            calendarRank.appendChild(rankInput);
+            calendarDept.appendChild(deptInput);
+            
+            document.getElementsByClassName("calendarDetail")[index].submit();
+        }
+
+        function changeDivToInput(divTag, name){
+            var newInput = setInputTag(name, "text", divTag);
+            var obj = {};
+
+            newInput.setAttribute("name", name + "Value");
+
+            if(typeof(divTag) == typeof(obj)){
+                divTag = divTag.innerHTML;
             }
+            newInput.setAttribute("value", divTag);
+            newInput.style.display = "none";
+
+            return newInput;
         }
 
     </script>

@@ -49,151 +49,155 @@
         <div id="calendarTitle">
             <h1 id="calendarTitleText">일정</h1>
         </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(0, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">01월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(0, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(1, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">02월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(1, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(2, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">03월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(2, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(3, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">04월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(3, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(4, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">05월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(4, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(5, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">06월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(5, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(6, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">07월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(6, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(7, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">08월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(7, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(8, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">09월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(8, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(9, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">10월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(9, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(10, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">11월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(10, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
-        </div>
-        <div class="calendarHead">
-            <button id="backButton" class="headButton" onclick="buttonEvent(11, 'back')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/backWhite.png">
-            </button>
-            <h2 class="calendarMonth">12월</h2>
-            <button id="forwardButton" class="headButton" onclick="buttonEvent(11, 'forward')">
-                <!--Back icons created by Roundicons - Flaticon</a>-->
-                <img src="../IMG/forwardWhite.png">
-            </button>
+        <div id="calendarHeadBox">
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(0, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">01월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(0, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(1, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">02월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(1, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(2, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">03월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(2, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(3, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">04월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(3, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(4, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">05월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(4, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(5, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">06월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(5, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(6, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">07월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(6, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(7, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">08월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(7, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(8, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">09월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(8, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(9, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">10월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(9, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(10, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">11월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(10, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
+            <div class="calendarHead">
+                <button id="backButton" class="headButton" onclick="buttonEvent(11, 'back')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/backWhite.png">
+                </button>
+                <h2 class="calendarMonth">12월</h2>
+                <button id="forwardButton" class="headButton" onclick="buttonEvent(11, 'forward')">
+                    <!--Back icons created by Roundicons - Flaticon</a>-->
+                    <img src="../IMG/forwardWhite.png">
+                </button>
+            </div>
         </div>
 
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
-        <div class="calendarBodyBox"></div>
+        <div id="calendarBodyBox">
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+            <div class="calendarBody"></div>
+        </div>
 
 
     </main>
@@ -246,20 +250,19 @@
         function viewMonth(monthNow){
             var calendarHead = document.getElementsByClassName("calendarHead");
             var calendarMonth = document.getElementsByClassName("calendarMonth");
-            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox");
+            var calendarBody = document.getElementsByClassName("calendarBody");
 
             for(var i = 0; i < calendarMonth.length; i++){
                 if(monthNow == calendarMonth[i].innerHTML.substr(0, 2)){
                     calendarHead[i].style.visibility = "visible";
                     calendarHead[i].style.opacity = "1";
-                    calendarBodyBox[i].style.visibility = "visible";
-                    calendarBodyBox[i].style.opacity = "1";
+                    calendarBody[i].style.visibility = "visible";
+                    calendarBody[i].style.opacity = "1";
                 }
             }
         }
 
         function newCalendarBox(){
-            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox");
             var calendarMonth = document.getElementsByClassName("calendarMonth");
 
             var content = "<%=calendarContentList%>";
@@ -286,10 +289,10 @@
         }
 
         function newContent(contentList, dateList, index){
-            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox")[index];
+            var calendarBody = document.getElementsByClassName("calendarBody")[index];
 
             for(var i = 0; i < contentList.length; i++){
-                var newBody = setDivTag("calendarBody");
+                var newCalendar = setDivTag("calendar");
                 var newDetailDiv = setFormTag("calendarDetail", "editProcess.jsp");
                 var newDateDiv = setDivTag("calendarDate");
                 var newContentDiv = setDivTag("calendarContent");
@@ -297,9 +300,10 @@
                 var newModifyButon = setInputTag("bodyButton", "button", "수정");
                 var newDeleteButton = setInputTag("bodyButton", "button", "삭제");
 
-                calendarBodyBox.appendChild(newBody);
+                calendarBody.appendChild(newCalendar);
 
-                newBody.appendChild(newDetailDiv);
+                newCalendar.appendChild(newDetailDiv);
+                newCalendar.style.height = "var(--calendar-height)";
 
                 newDetailDiv.appendChild(newDateDiv);
                 newDetailDiv.appendChild(newContentDiv);
@@ -308,6 +312,9 @@
                 newDateDiv.innerHTML = dateList[i];
                 
                 newContentDiv.innerHTML = contentList[i];
+                newContentDiv.style.whiteSpace = "nowrap";
+                newContentDiv.style.paddingTop = "15px";
+                newContentDiv.style.paddingBottom = "15px";
 
                 newButtonBoxDiv.appendChild(newModifyButon);
                 newButtonBoxDiv.appendChild(newDeleteButton);
@@ -361,17 +368,17 @@
         }
 
         function viewMore(index){
-            calendarBody = document.getElementsByClassName("calendarBody")[index];
+            calendar = document.getElementsByClassName("calendar")[index];
             calendarContent = document.getElementsByClassName("calendarContent")[index];
 
-            if(calendarBody.style.height != "var(--calendarBody-grown-height)"){
-                calendarBody.style.height = "var(--calendarBody-grown-height)";
+            if(calendar.style.height != "var(--calendar-grown-height)"){
+                calendar.style.height = "var(--calendar-grown-height)";
                 calendarContent.style.whiteSpace = "pre-line";
                 calendarContent.style.paddingTop = "25px";
                 calendarContent.style.paddingBottom = "25px";
             }
             else{
-                calendarBody.style.height = "var(--calendarBody-height)";
+                calendar.style.height = "var(--calendar-height)";
                 calendarContent.style.whiteSpace = "nowrap";
                 calendarContent.style.paddingTop = "15px";
                 calendarContent.style.paddingBottom = "15px";
@@ -380,12 +387,12 @@
 
         function buttonEvent(index, direction){
             var calendarHead = document.getElementsByClassName("calendarHead");
-            var calendarBodyBox = document.getElementsByClassName("calendarBodyBox");
+            var calendarBody = document.getElementsByClassName("calendarBody");
             
             calendarHead[index].style.visibility = "hidden";
             calendarHead[index].style.opacity = "0";
-            calendarBodyBox[index].style.visibility = "hidden";
-            calendarBodyBox[index].style.opacity = "0";
+            calendarBody[index].style.visibility = "hidden";
+            calendarBody[index].style.opacity = "0";
 
             if(direction == "back"){
                 if(index == 0){
@@ -405,8 +412,8 @@
             }
             calendarHead[index].style.visibility = "visible";
             calendarHead[index].style.opacity = "1";
-            calendarBodyBox[index].style.visibility = "visible";
-            calendarBodyBox[index].style.opacity = "1";
+            calendarBody[index].style.visibility = "visible";
+            calendarBody[index].style.opacity = "1";
         }
 
         function modifyEvent(index){
@@ -464,9 +471,7 @@
             var content = calendarContent[contentIndex];
             var date = calendarDate[contentIndex];
 
-            console.log(contentIndex);
-
-            var  detail = document.getElementsByClassName("calendarDetail")[contentIndex];
+            var detail = document.getElementsByClassName("calendarDetail")[contentIndex];
 
             var dateInput = changeDivToInput(date, "date");
             var contentInput = changeDivToInput(content, "content");

@@ -5,8 +5,8 @@
     --topBar-font-size: 20px;
     --topBar-height: 80px;
     --bodyButton-font-size: 14px;
-    --calendarBody-height: 50px;
-    --calendarBody-grown-height: 100px;
+    --calendar-height: 50px;
+    --calendar-grown-height: 100px;
 }
 
 html{
